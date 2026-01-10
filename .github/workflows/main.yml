@@ -6,6 +6,13 @@ on:
   pull_request:
     branches: [ "main" ]
 
+# TĘ SEKCJĘ DODAJEMY, ŻEBY NAPRAWIĆ BŁĄD 403:
+permissions:
+  contents: read
+  issues: read
+  checks: write
+  pull-requests: write
+
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
@@ -23,18 +30,17 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    # ZADANIE 13 (DODATKOWE): Quality Gate (sprawdzanie jakości kodu)
+    # ZADANIE 13: Quality Gate
     - name: Lint with flake8
       run: |
-        # stop the build if there are Python syntax errors or undefined names
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
 
-    # ZADANIE 4: Uruchomienie Testów
+    # ZADANIE 4: Testy
     - name: Test with pytest
       run: |
         pytest --junitxml=test-results.xml
 
-    # ZADANIE 4: Raport z wyników (żeby było ładnie widać w GitHubie)
+    # ZADANIE 4: Raport (teraz zadziała, bo ma uprawnienia)
     - name: Publish Test Results
       uses: EnricoMi/publish-unit-test-result-action@v2
       if: always()
