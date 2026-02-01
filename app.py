@@ -3,6 +3,7 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
+
 def get_version() -> str:
     path = os.path.join(BASE_DIR, "version.txt")
     try:
@@ -11,11 +12,14 @@ def get_version() -> str:
     except FileNotFoundError:
         return "dev"
 
+
 app = Flask(__name__)
+
 
 @app.route('/')
 def home():
     return "Czesc! Aplikacja dziala. Zaliczenie DevOps."
+
 
 @app.route('/products')
 def products():
@@ -25,13 +29,16 @@ def products():
     ]
     return jsonify(data)
 
+
 @app.route('/version')
 def version():
     return jsonify({"version": get_version()})
 
+
 @app.route('/health')
 def health():
     return "OK", 200
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
