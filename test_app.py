@@ -17,3 +17,16 @@ def test_products(client):
     rv = client.get('/products')
     assert rv.status_code == 200
     assert b"Laptop" in rv.data
+
+def test_version(client):
+    """Test endpointu /version"""
+    rv = client.get('/version')
+    assert rv.status_code == 200
+    # JSON should contain a 'version' key
+    assert b"version" in rv.data
+
+def test_health(client):
+    """Test endpointu /health"""
+    rv = client.get('/health')
+    assert rv.status_code == 200
+    assert b"OK" in rv.data
