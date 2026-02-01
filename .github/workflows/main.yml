@@ -22,7 +22,7 @@ jobs:
 
     - name: Ustaw wersje aplikacji
       run: |
-        echo "${{ github.run_number }}" > devops_projekt/version.txt
+        echo "${{ github.run_number }}" > version.txt
 
     - name: Ustawienie Pythona
       uses: actions/setup-python@v3
