@@ -78,3 +78,20 @@ python devops_projekt/app.py
 	pytest -q devops_projekt/test_app.py   # (uruchamia testy endpointów)
 	```
 - **W Actions:** Otwórz ostatni przebieg na `main` — najpierw "Build i Test", potem "Wdrożenie do Azure". Zielony build ⇒ startuje deploy.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://wseii-my.sharepoint.com/personal/pkolodziej_wsei_edu_pl/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fpkolodziej%5Fwsei%5Fedu%5Fpl%2FDocuments%2FPrzedmioty%2F2026%5Flato%20%2D%20Programowanie%20aplikacji%20webowych%2FZaj%C4%99cia%2003&cid=68c3c7f6%2Dfee9%2D4f48%2Da71b%2D17cb6793730e&ga=1
